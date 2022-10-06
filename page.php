@@ -1,3 +1,3 @@
-<?= 
- 'another_page' 
-?>
+<?php get_header() ?>
+
+<?php get_footer() ?>

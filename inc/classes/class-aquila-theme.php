@@ -32,6 +32,7 @@ class AQUILA_THEME {
 	{
 		add_theme_support('title-tag');
 		add_theme_support('post-thumbnails');
+		add_image_size( 'featured-thumbnail', 350, 233, true );
 		add_theme_support('custom-logo', [
 			'header-text' => ['site-title', 'site-description'],
 			'height'      => 100,

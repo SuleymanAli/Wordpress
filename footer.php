@@ -9,7 +9,7 @@
   <div class="container">
     <div class="row py-4">
       <div class="col-lg-4">
-        <a href="<?php get_home_url(); ?>">
+        <a href="<?= get_home_url(); ?>">
           <h1 class="text-center text-lg-left navbar-brand">
             <?php 
             if (function_exists('the_custom_logo')) {

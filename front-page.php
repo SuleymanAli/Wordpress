@@ -4,7 +4,9 @@ Front Page (Home) - <?= is_front_page(); ?>
 <br>
 Blog Home (Blog) - <?= is_home(); ?> -->
 <?php get_header(); ?>
+
 <?php get_template_part('template-parts/slider') ?>
+
 <!-- Blog -->
 <div id="blog">
   <div class="container">
@@ -294,6 +296,7 @@ Blog Home (Blog) - <?= is_home(); ?> -->
   </div>
 </div>
 </div>
+
 <!-- Dijitolog TV -->
 <div id="tv">
   <div class="container">

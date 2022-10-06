@@ -131,6 +131,11 @@ header a:hover {
   border: 1px solid #eee !important;
 }
 
+.blog-box a {
+  display: inline-flex;
+  color: inherit;
+}
+
 .img {
   width: 100%;
   display: block;
@@ -156,6 +161,17 @@ header a:hover {
   font-weight: 600;
   color: #676d78;
   font-family: 'Raleway', sans-serif;
+}
+
+.blog-box-category {
+  top: 18px;
+  right: 18px;
+}
+
+.blog-box-category a {
+  padding: 8px;
+  cursor: pointer;
+  text-decoration: none;
 }
 
 .blog-box-text {
