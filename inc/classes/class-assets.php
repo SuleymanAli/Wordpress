@@ -46,7 +46,8 @@ class Assets {
      $scriptTracker = filemtime(get_template_directory( ) . '/assets/js/main.js');
      wp_enqueue_script( 'bts', get_template_directory_uri( ) . '/assets/js/bootstrap.min.js', ['jquery'], '4.4.0', true);
      wp_enqueue_script( 'popper', get_template_directory_uri( ) . '/assets/js/popper.min.js', ['jquery'], '1.16.0', true);
-     wp_enqueue_script( 'custom_js', get_template_directory_uri( ) . '/assets/js/main.js', ['bts'], $scriptTracker , true);
+     wp_enqueue_script( 'vue.js', get_template_directory_uri( ) . '/assets/js/vue.js', ['jquery'], '1.16.0', true);
+     wp_enqueue_script( 'custom_js', get_template_directory_uri( ) . '/assets/js/main.js', ['bts', 'vue.js'], $scriptTracker , true);
 	}
 
 }

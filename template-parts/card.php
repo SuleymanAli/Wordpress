@@ -1,3 +1,10 @@
+<?php 
+
+$the_post_id = get_the_ID();
+$hide_title = get_post_meta($the_post_id,'_hide_page_title', true );
+print_r($hide_title);
+?>
+
 <div class="blog-box mb-4 position-relative">
   <!-- Image -->
   <?php the_post_custom_thumbnail(
@@ -14,6 +21,7 @@
     <div class="blog-box-hashtag d-flex justify-content-between">
       <div>
         <?php the_tags('#', ' ') ?>
+        <?php echo $hide_title; ?>
       </div>
       <?php the_time('F j, Y') ?>
     </div>

@@ -197,8 +197,8 @@ function aquila_the_post_pagination( $current_page_no, $posts_per_page, $article
 	$format = ! empty( $is_query_param_structure ) ? '?page=%#%' : 'page/%#%';
 
 	?>
-	<div class="mt-0 md:mt-10 mb-10 lg:my-5 flex items-center justify-end posts-navigation">
-		<?php
+<div class="mt-0 md:mt-10 mb-10 lg:my-5 flex items-center justify-end posts-navigation">
+  <?php
 		if ( 1 < $total_pages && !empty( $first_page_url ) ) {
 			printf(
 				'<span class="mr-2">Showing %1$s - %2$s Of %3$s</span>',
@@ -230,8 +230,8 @@ function aquila_the_post_pagination( $current_page_no, $posts_per_page, $article
 		}
 
 		?>
-	</div>
-	<?php
+</div>
+<?php
 }
 
 /**
