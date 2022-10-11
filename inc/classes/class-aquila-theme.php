@@ -18,6 +18,8 @@ class AQUILA_THEME {
 		Menus::get_instance();
 		Meta_Boxes::get_instance();
 		API::get_instance();
+		Custom_Posts::get_instance();
+		User::get_instance();
 
 		$this->setup_hooks();
 	}

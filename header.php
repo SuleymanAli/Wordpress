@@ -11,7 +11,7 @@
   <!-- Header -->
   <div class="container-fluid p-0">
     <div class="row">
-      <div class="col-lg-11">
+      <div class="col-lg-10">
         <navbar class="navbar navbar-expand-lg p-4">
           <!-- Logo -->
           <a href="<?= esc_url(get_home_url()) ?>" class="navbar-brand pr-4 border-right">
@@ -35,12 +35,18 @@
           </div>
         </navbar>
       </div>
-      <div class="col-lg-1 d-flex align-items-center justify-content-end pr-5">
+      <div class="col-lg-2 d-flex align-items-center justify-content-end pr-5">
         <div>
           <?php if (is_user_logged_in()) : ?>
-          Loginned User
+          <!-- <?= get_current_user(); ?> -->
+          <span class="mr-3">
+            <?= get_avatar(get_current_user_id(), 60); ?>
+          </span>
+          <a href="<?= wp_logout_url(site_url()) ?>">Log Out</a>
+
           <?php else: ?>
-          Sign up
+          <a href="<?= wp_login_url() ?>" class="mr-3">Login In</a>
+          <a href="<?= wp_registration_url() ?>">Sign Up</a>
           <?php endif ?>
         </div>
       </div>

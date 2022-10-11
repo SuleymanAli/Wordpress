@@ -7,11 +7,3 @@ jQuery(document).ready(function () {
     }
   })
 })
-
-new Vue({
-  el: '#searchField',
-  methods: {},
-  mounted() {
-    console.log(this)
-  },
-})
