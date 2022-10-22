@@ -1,9 +1,4 @@
 <?php get_header(); ?>
-<!-- <br> -->
-<!-- Front Page (Home) - <?= is_front_page(); ?> -->
-<!-- <br> -->
-<!-- Blog Home (Blog) - <?= is_home(); ?> -->
-<!-- <br> -->
 
 <h1 class="text-center">
   <?php 

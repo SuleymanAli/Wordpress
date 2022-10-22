@@ -19,9 +19,10 @@ class API {
 	protected function setup_hooks() {
 
 		/**
-		 * Actions.
+		 * Actions. 
 		 */
 		add_action( 'rest_api_init', [ $this, 'search' ] );
+    add_filter('wp_insert_post_data', [ $this, 'makeNotePrivate'], 10, 2);
 	}
 
 	public function search()
@@ -82,5 +83,22 @@ class API {
     endwhile;
     
     return $result;
+  }
+
+  public function makeNotePrivate($data, $postarr) {
+    if ($data['post_type'] == 'notes') {
+      if(count_user_posts(get_current_user_id(), 'notes') > 4 AND !$postarr['ID']) {
+        die("You have reached your note limit.");
+      } 
+  
+      $data['post_content'] = sanitize_textarea_field($data['post_content']);
+      $data['post_title'] = sanitize_text_field($data['post_title']);
+    }
+  
+    if($data['post_type'] == 'notes' AND $data['post_status'] != 'trash') {
+      $data['post_status'] = "private";
+    }
+    
+    return $data;
   }
 }

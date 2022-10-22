@@ -5,7 +5,7 @@
 ?>
 
 <!-- Footer -->
-<footer>
+<footer class="mt-auto">
   <div class="container">
     <div class="row py-4">
       <div class="col-lg-4">
@@ -33,7 +33,7 @@
             ?>
             <li class="nav-item">
               <a href="<?php echo esc_url( $menu_item->url ); ?>" class="nav-link"
-                target="<?php echo esc_attr( $link_target ); ?>" title="<?php echo esc_attr( $menu_item->title ); ?>">
+                title="<?php echo esc_attr( $menu_item->title ); ?>">
                 <?php echo esc_html( $menu_item->title ); ?>
               </a>
             </li>

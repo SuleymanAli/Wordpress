@@ -48,6 +48,10 @@ class Assets {
      wp_enqueue_script( 'popper', get_template_directory_uri( ) . '/assets/js/popper.min.js', ['jquery'], '1.16.0', true);
      wp_enqueue_script( 'vue.js', get_template_directory_uri( ) . '/assets/js/vue.js', ['jquery'], '1.16.0', true);
      wp_enqueue_script( 'custom_js', get_template_directory_uri( ) . '/assets/js/main.js', ['bts', 'vue.js'], $scriptTracker , true);
+		 wp_localize_script('custom_js', 'themeData', [
+			'root_url' => get_site_url(),
+			'nonce' => wp_create_nonce('wp_rest')
+		 ]);
 	}
 
 }

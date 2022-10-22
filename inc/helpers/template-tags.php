@@ -67,7 +67,8 @@ function aquila_posted_on() {
 
 	// Post is modified ( when post published time is not equal to post modified time )
 	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
+		// $time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
+		$time_string = '<time class="updated" datetime="%3$s">%4$s</time>';
 	}
 
 	$time_string = sprintf( $time_string,
@@ -84,6 +85,7 @@ function aquila_posted_on() {
 
 	echo '<span class="posted-on text-secondary">' . $posted_on . '</span>';
 }
+
 
 /**
  * Prints HTML with meta information for the current author.
@@ -286,4 +288,34 @@ function aquila_has_gravatar( $user_email ) {
 
 	// If request status is 200, which means user has uploaded the avatar on gravatar site
 	return preg_match( "|200|", $headers[0] );
+}
+
+function postsByCategory($categorySlug, $postCount = 3){
+	// Catgories
+	$isPostCategorySlug = null;
+	$categories = get_categories([
+		'orderby' => 'name',
+		'order' => 'ASC',
+		'hide_empty' => 0,
+	]);
+	foreach($categories as $cat) {
+		if($cat->slug === $categorySlug) {
+			$isPostCategory = $cat;
+		}
+	}
+
+	// Post By Categories
+	if (!empty($categories) && $isPostCategory):
+		$query = new WP_Query([
+			'post_type' => 'post',
+			'posts_per_page' => $postCount,
+			'order' => 'ASC',
+			'orderby' => 'title',
+			'cat' => $isPostCategory->term_id,
+		]);
+		return $query;
+
+		// Reset Query
+		wp_reset_postdata(); 
+	endif;
 }

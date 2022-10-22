@@ -20,6 +20,7 @@ class AQUILA_THEME {
 		API::get_instance();
 		Custom_Posts::get_instance();
 		User::get_instance();
+		Sidebars::get_instance();
 
 		$this->setup_hooks();
 	}
